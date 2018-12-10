@@ -2,6 +2,11 @@
 
 
 class vehicule{
+ 
+    private function(){
+        
+    }
+
 
     
 }
