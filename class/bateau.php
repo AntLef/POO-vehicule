@@ -2,7 +2,7 @@
 
 abstract class bateau extends eau {
 
-protected $nbgiletdesauvetage;
+    protected $nbgiletdesauvetage;
 
 
 }

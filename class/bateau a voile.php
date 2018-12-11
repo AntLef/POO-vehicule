@@ -4,7 +4,7 @@
 
 class bateauavoile extends bateau{
 
-protected $nbvoile;
-protected $nbmat;
+    protected $nbvoile;
+    protected $nbmat;
 
 }
