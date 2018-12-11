@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< Updated upstream
 abstract class Vehicule
 {
 	protected $sizeX;			//
@@ -141,3 +142,136 @@ abstract class Vehicule
 	}
 
 }
+=======
+class vehicule{
+
+protected $tailleHauteur;
+protected $tailleLargeur;
+Protected $tailleLongueur;
+Protected $vitesse;
+Protected $energie;
+Protected $poids;
+Protected $couleur;
+
+public function getTailleHauteur(){
+    return $this->tailleHauteur 
+}
+public function setTailleHauter($hauteur){
+    $this->tailleHauteur = $hauteur;
+}
+
+
+public function tailleLargeur(){
+    return $this->tailleLargeur
+}
+public function setTailleHauter($largeur){
+    $this->tailleLargeur = $largeur;
+}
+
+
+public function tailleLongueur(){
+    return $this->tailleLongueur 
+}
+public function setTailleLongeur($longueur){
+    $this->tailleLongeur = $longueur;
+}
+
+
+public function getVitesse(){
+    return $this->vitesse 
+}
+public function setVitesse($speed){
+    $this->vitesse = $speed;
+}
+
+
+public function getEnergie(){
+    return $this->energie
+}
+public function setEnergie($energy){
+    $this->energie = $energy;
+}
+
+
+public function getpoids(){
+    return $this->poids
+}
+public function setPoids($wheight){
+$this->poids = $wheight;
+}
+
+
+public function getCouleur(){
+    return $this->couleur 
+}
+public function setCouleur($color){
+$this->couleur = $color;
+}
+
+public function _construct($tailleHauteur,$tailleLargeur,$tailleLongueur,$vitesse,$energie,$poids,$couleur){
+    $this->setTailleHauteur ($tailleHauteur);
+    $this->setTailleLargeur ($tailleLargeur);
+    $this->setTailleLongeur ($tailleLongueur);
+    $this->setVitesse ($vitesse);
+    $this->setEnergie ($energie);
+    $this->setPoids ($poids);
+    $this->setcouleur ($couleur);
+}
+
+public function Demarer(){
+    if ($vitesse >= 0){
+
+    echo "sa démarre !!!!"
+    }
+    else{
+        echo "appuie sur le champigon"
+    }
+
+}
+
+public function Arreter(){
+
+$this->$vitesse = 0;
+
+}
+
+public function Accelerer(){
+
+$this->vitesse = $this->vitesse + 5;
+
+}
+
+public function Freiner(){
+
+$this->vitesse -= 5;
+
+}
+
+
+public function tourner(){
+
+}
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+>>>>>>> Stashed changes
