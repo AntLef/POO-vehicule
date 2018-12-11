@@ -1,37 +1,12 @@
 <?php
 
 
-abstract class eau{
+abstract class eau extends vehicule{
 
-protected $moteur;
-protected $gouvernail;
-protected $coque;
+
 protected $sonar;
 protected $radio;
 
-
-public function getMoteur(){
-    return $this->moteur;
-}
-public function setMoteur($motor){
-    $this->moteur = $motor;
-}
-
-
-public function getGouvernail(){
-    return $this->gouvernail;
-}
-public function setGouvernail($rudder){
-    $this->gouvernail = $rudder;
-}
-   
-
-public function getCoque(){
-    return $this->coque;
-}
-public function setCoque ($shell){
-    $this->coque = $shell;
-}
 
 public function getSonar(){
     return $this->sonar;
