@@ -1,6 +1,6 @@
 <?php
 
-class Voiture extends Terre{
+class Moto extends Terre{
 
 	protected $wheel = 4;
 

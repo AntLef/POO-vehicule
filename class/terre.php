@@ -2,7 +2,7 @@
 
 abstract class Terre extends Vehicule{
 
-	protected $whell = 2; /** roue */
+	protected $wheel = 2; /** roue */
 	protected $window; /** pare brise */
 	protected $rearview_mirror; /** rétroviseur */
 	protected $shock_absorber; /** amortisseur  */
@@ -12,8 +12,8 @@ abstract class Terre extends Vehicule{
 
 /** Attribut */
 
-	public function __construct($whell,$window,$rearview_mirror,$shock_absorber,$bodywork,$drift) {
-		$this->whell = $whell;
+	public function __construct($wheel,$window,$rearview_mirror,$shock_absorber,$bodywork,$drift) {
+		$this->wheel = $wheel;
 		$this->windows = $window;
 		$this->rearview_mirror = $rearview_mirror;
 		$this->shock_absorber = $shock_absorber;
@@ -21,15 +21,15 @@ abstract class Terre extends Vehicule{
 	}
 
 
-	public function getWhell() {
-		echo "Ce véhicule terrestre à ".$whell." roues.";
+	public function getwheel() {
+		echo "Ce véhicule terrestre à ".$wheel." roues.";
 	}
 
-	public function SetWhell() {
-		if ($whell < 2){
-			$well + 1;
+	public function Setwheel($wheel) { /** si ton véhicule à moins de deux roues */
+		if ($wheel < 2){
+			$wheel + 1;
 		} else {
-			return $this->$whell;
+			return $this->$wheel;
 		}
 	}
 	
@@ -38,7 +38,7 @@ abstract class Terre extends Vehicule{
 		return $this->windows;
 	}
 
-	public function setWindow() {
+	public function setWindow($window) {
 		if($windows = 1){
 			return 1;
 		} else if ($window > 1) {
@@ -54,7 +54,7 @@ abstract class Terre extends Vehicule{
 		return $this->rearview_mirror;
 	}
 	
-	public function setRearview_mirror() {
+	public function setRearview_mirror($rearview_mirror) {
 		if ($rearview_mirror < 2){
 			$rearview_mirror + 1;
 		} else {
@@ -67,8 +67,8 @@ abstract class Terre extends Vehicule{
 		return $this->shock_absorber;
 	}
 	
-	public function setShock_absorber() {
-		if ($whell == $shock_absorber){
+	public function setShock_absorber($shock_absorber) {
+		if ($wheel == $shock_absorber){
 			echo "Tu as un problème !";
 		} else {
 			echo "Ton véhucule terrestre n'est pas hs";
