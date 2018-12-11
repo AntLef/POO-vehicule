@@ -50,7 +50,7 @@ public function setBatterie($bat){
 
 
 public function descendre(){
-    if ($immersible += 60 ){                //si le sous marin est entre 0 et 200 m alors il est immergé sinon il est a la surface
+    if ($immersible <=200 && $immersible += 60 ){                //si le sous marin est entre 0 et 200 m alors il est immergé sinon il est a la surface
         echo "Vous êtes en train d'immergé";                                    
     }
     else {
@@ -71,7 +71,7 @@ public function lancerdetorpille(){
 
 
 public function remonter(){
-    if ($immersible -=90){
+    if ($immersible >=200 && $immersible -=90){
         echo "vous remonté vers la surface";
     }
     else {
