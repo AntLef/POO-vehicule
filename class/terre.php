@@ -6,9 +6,11 @@ abstract class Terre extends Vehicule{
 	protected $window; /** pare brise */
 	protected $rearview_mirror; /** rétroviseur */
 	protected $shock_absorber; /** amortisseur  */
-	protected $bodywork; /** carrosserie */
+
 	protected $drift;
 
+
+/** Attribut */
 
 	public function __construct($whell,$window,$rearview_mirror,$shock_absorber,$bodywork,$drift) {
 		$this->whell = $whell;
@@ -16,7 +18,6 @@ abstract class Terre extends Vehicule{
 		$this->rearview_mirror = $rearview_mirror;
 		$this->shock_absorber = $shock_absorber;
 		$this->bodywork = $bodywork;
-		$this->drift = $drift;
 	}
 
 
@@ -57,7 +58,7 @@ abstract class Terre extends Vehicule{
 		if ($rearview_mirror < 2){
 			$rearview_mirror + 1;
 		} else {
-			return $this->$whell;
+			return $this->$rearview_mirror;
 		}
 	}
 
@@ -67,74 +68,18 @@ abstract class Terre extends Vehicule{
 	}
 	
 	public function setShock_absorber() {
-	
+		if ($whell == $shock_absorber){
+			echo "Tu as un problème !";
+		} else {
+			echo "Ton véhucule terrestre n'est pas hs";
+		}
 	}
 	
-	public function getBodywork() {
-		echo "Ce véhicule à ".$bodywork." une c.";
-		return $this->bodywork;
-	}
-	
-	public function setBodywork() {
-	
-	}
-	
-	public function getDrift() {
-		echo "Ce véhicule terrestre à ".$drift." roues.";
-		return $this->drift;
-	}
-	
-	public function setDrift() {
-	
-	}
 
-}
+	/** Méthode */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Voiture extends Terre{
-
-	protected $whell = 2;
-
-
-	public function __construct($whell){
-		$this->getWhell($whell);
-	}
-
-	public function getWhell(){
-		echo "Ce véhicule terrestre à ".$whell.".";
+	public function drift() {
+		echo "Ce véhicule est en train de drifter.";
 	}
 
 }
