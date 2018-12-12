@@ -1,6 +1,6 @@
 <?php
 
-class Voiture extends Terre{
+class Camion extends Terre{
 
 	protected $wheel = 4;
 	protected $passager = 1;
@@ -9,8 +9,8 @@ class Voiture extends Terre{
 
 	public function __construct($wheel) {
 		$this->wheel = $wheel;
+		$this->passager = $passager;
 	}
-
 
 	public function getwheel() {
 		echo "Ce véhicule terrestre à ".$wheel." roues.";
@@ -34,10 +34,8 @@ class Voiture extends Terre{
 			echo "Il y a de place dans le vehicule";
 		} 
 	}
-	
 
 /** Méthode */
-
 
 }
 
