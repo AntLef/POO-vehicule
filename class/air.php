@@ -1,7 +1,7 @@
 <?php  
 require(vehicule.php);
 
-	abstract class Air extends Vehicule
+	class Air extends Vehicule
 {
 
 	protected $helice;
@@ -10,22 +10,18 @@ require(vehicule.php);
 	protected $radar;
 	protected $radio;
 
+	//Ici on crée un constructeur
 	public function __construct($altitude,$roues){ //Ici on crée un constructeur
 		$this->altitude = $altitude;
 		$this->roues = $roues;
 	}
 
-	// On crée la fonction vol qui va permettre de prendre de l'altitude, en vérifiant bien que toutes les conditions pour le vol sont réunies
-	public function vol(){ 
-		if ($isOn == true && $speed > 50 && $helice == true) {
-			echo "Vous prenez de l'altitude";
-			$altitude++;
-		}
-		else {
-			echo "Pas assez d'allure";
-			return;
-		}
-	}
+	// On crée la méthode abstraite vol qui va être redéfini dans avion et hélico
+	abstract function vol()
+
+	//idem
+	abstract function tourner()
+
 	//On va juste activer ou désactiver les roues qui sont inutiles en l'air, elles se réactivent quand on est a 100 m du sol, de manière à pouvoir atterir.
 	public function rouesOffOn(){
 		if ($altitude > 100){
