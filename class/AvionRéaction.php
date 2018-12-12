@@ -5,8 +5,9 @@ require (avion.php);
 {
 	protected $missiles;
 
-	public function __construct($missiles)
+	public function __construct($missiles){ 
 	$this->missiles = $missiles;
+	}
 
 	public function tirerMissiles(){
 		if ($missiles > 0) {

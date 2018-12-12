@@ -30,9 +30,9 @@ class Moto extends Terre{
 	}
 	public function setPassager($passager){
 		if($passager > 2){
-			echo "Il n'y a plus de place dans le vehicule";
+			echo "<br>Il n'y a plus de place dans le vehicule.";
 		} else {
-			echo "Il y a de place dans le vehicule";
+			echo "<br>Il y a de place dans le vehicule.";
 		} 
 	}
 

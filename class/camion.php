@@ -13,7 +13,7 @@ class Camion extends Terre{
 	}
 
 	public function getwheel() {
-		echo "Ce véhicule terrestre à ".$wheel." roues.";
+		echo "<br>Ce véhicule terrestre à ".$wheel." roues.";
 	}
 
 	public function Setwheel($wheel) { /** si ton véhicule à moins de deux roues */
@@ -29,9 +29,9 @@ class Camion extends Terre{
 	}
 	public function setPassager($passager){
 		if($passager > 4){
-			echo "Il n'y a plus de place dans le vehicule";
+			echo "<br>Il n'y a plus de place dans le vehicule.";
 		} else {
-			echo "Il y a de place dans le vehicule";
+			echo "<br>Il y a de place dans le vehicule.";
 		} 
 	}
 

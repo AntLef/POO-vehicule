@@ -37,11 +37,11 @@ require(vehicule.php);
 		if ($speed < 50) {
 			$altitude --;
 		}else{
-			echo "Tu vas trop vite ";
+			echo "<br>Tu vas trop vite. ";
 			return;
 		}
 		if($altitude <=100){
-			echo "Tu es déjà bas, tu atterris";
+			echo "<br>Tu es déjà bas, tu atterris.";
 			$altitude = 0;
 			$helice = false;
 		}
@@ -49,16 +49,16 @@ require(vehicule.php);
 	//On vérifie que le véhicule est allumé, qu'il est bien au sol et que les roues soit sortis pour pouvoir démarrer. Les hélices s'activent pour augmenter la vitesse
 	public function rouler(){
 		if ($isOn == true && $altitude == 0 && $roues = true) {
-			echo "Votre véhicule roule pour prendre de la vitesse";
+			echo "<br>Votre véhicule roule pour prendre de la vitesse.";
 			$speed +10;
 			$helice = true;
 		}
 		elseif ($isOn == false){
-			echo "Allume. Le. MOTEUR";
+			echo "<br>Allume. Le. MOTEUR!";
 			return;
 		}
 		else{
-			echo "Tu ne peux pas.. Rouler.. Dans les airs...";
+			echo "<br>Tu ne peux pas.. Rouler.. Dans les airs...";
 			$helice = true;
 			return;
 

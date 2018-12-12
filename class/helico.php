@@ -17,24 +17,24 @@ require (air.php);
 	//méthode pour voler et prendre de l'altitude
 	public function vol(){
 		if (vitesseHelice > 50) {
-			echo "l'hélico s'élève";
+			echo "<br>l'hélico s'élève.";
 			$altitude ++;
 		}
 	}
 	//3 méthodes, tourner a gauche, tourner a droite ou se redresser
 	public function tournerGauche (){
 	$inclinaison = "gauche" ;
-	echo "Vous tournez à gauche";
+	echo "<br>Vous tournez à gauche.";
 	}
 		
 	public function tournerDroite (){
 		$inclinaison = "droite";
-		echo "Vous tournez à droite";
+		echo "<br>Vous tournez à droite.";
 
 	}
 	public function Redresser(){
 		$inclinaison = "milieu";
-		echo "Vous vous redressez";
+		echo "<br>Vous vous redressez.";
 	}
 
 	//méthode pour tirer et recharger
@@ -45,12 +45,12 @@ require (air.php);
 		}
 	}
 	public function Recharger(){
-	if (stockMunition => 50) {		
+	if (stockMunition >= 50) {		
 		$stockMunition - 50;
 		$munition + 50;
 		}
 	else {
-		echo "Plus de balles ¯\_(ツ)_/¯";
+		echo "<br>Plus de balles ¯\_(ツ)_/¯.";
 		}
 
 	}

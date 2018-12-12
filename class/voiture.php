@@ -1,7 +1,7 @@
 <?php
 
-require("./terre.php");
-require("./vehicule.php");
+require_once("terre.php");
+require_once("vehicule.php");
 
 class Voiture extends Terre{
 	protected $passager = 1;
@@ -10,17 +10,17 @@ class Voiture extends Terre{
 
 	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror,$passager) {
 		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror);
-		$this->passager = setPassager($passager);
+		$this->passager = $this->setPassager($passager);
 	}
 	public function getPassager(){
 		return $this->passager;
 	}
 	public function setPassager($passager){
 		if($passager > 5){
-			echo "Il n'y a plus de place dans le vehicule";
+			echo "<br>Il n'y a plus de place dans le vehicule.";
 			return -1;
 		} else {
-			echo "Il y a de place dans le vehicule";
+			echo "<br>Il y a de place dans le vehicule.";
 			$this->passager = $passager;
 		} 
 	}

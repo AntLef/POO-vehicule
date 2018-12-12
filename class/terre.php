@@ -1,6 +1,6 @@
 <?php
 
-require("./vehicule.php");
+require_once("vehicule.php");
 
 abstract class Terre extends Vehicule{
 
@@ -12,27 +12,27 @@ abstract class Terre extends Vehicule{
 /** Attribut */
 
 	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror) {
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed)
-		$this->wheel = setWheel($wheel);
-		$this->windows = setWheel($wheel);
-		$this->rearview_mirror = setRearview_mirror($rearview_mirror);
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed);
+		$this->wheel = $this->setWheel($wheel);
+		$this->windows = $this->setWheel($wheel);
+		$this->rearview_mirror = $this->setRearview_mirror($rearview_mirror);
 	}
 
 
 	public function getWheel() {
-		echo "Ce véhicule terrestre à ".$this->wheel." roues.";
+		echo "<br>Ce véhicule terrestre à ".$this->wheel." roues.";
 	}
 
 	public function setWheel($wheel) { /* si ton véhicule à moins de deux roues */
 		if ($wheel < 2){
 			$wheel = 2;
 		} else {
-			return $this->$wheel;,
+			$this->wheel =$wheel;
 		}
 	}
 	
 	public function getWindow() {
-		echo "Ce véhicule terrestre à ".$window." vitre.";
+		echo "<br>Ce véhicule terrestre à ".$window." vitre.";
 		return $this->windows;
 	}
 
@@ -40,15 +40,15 @@ abstract class Terre extends Vehicule{
 		if($windows = 1){
 			return 1;
 		} else if ($window > 1) {
-			echo "Ce véhicule terrestre à ".$window." vitres.";
+			echo "<br>Ce véhicule terrestre à ".$window." vitres.";
 		} else 
-		echo "Ce véhicule terrestre n'à plus de vitre.";
+		echo "<br>Ce véhicule terrestre n'à plus de vitre.";
 		return +1;
-		echo "Ce véhicule à de nouveaux une vitre";
+		echo "<br>Ce véhicule à de nouveaux une vitre.";
 	}
 
 	public function getRearview_mirror() {
-		echo "Ce véhicule terrestre à ".$rearview_mirror." rétroviseurs.";
+		echo "<br>Ce véhicule terrestre à ".$rearview_mirror." rétroviseurs.";
 		return $this->rearview_mirror;
 	}
 	
@@ -56,15 +56,13 @@ abstract class Terre extends Vehicule{
 		if ($rearview_mirror < 2){
 			$rearview_mirror + 1;
 		} else {
-			return $this->$rearview_mirror;
+			$this->rearview_mirror = $rearview_mirror;
 		}
 	}
 
 	/** Méthode */
 
-	public function drift() {
-		echo "Ce véhicule est en train de drifter.";
-	}
+
 
 }
 
