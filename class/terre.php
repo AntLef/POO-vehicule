@@ -18,7 +18,7 @@ abstract class Terre extends Vehicule{
 
 
 	public function getWheel() {
-		echo "Ce véhicule terrestre à ".$wheel." roues.";
+		echo "Ce véhicule terrestre à ".$this->wheel." roues.";
 	}
 
 	public function setWheel($wheel) { /* si ton véhicule à moins de deux roues */
