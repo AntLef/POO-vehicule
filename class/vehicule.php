@@ -76,7 +76,7 @@ abstract class Vehicule
 			$this->sizeZ = $size;
 		}
 	}
-	public function setSpeed(int $speed){			//Permet de fixer la vitesse entre 0 et la vitesse max en km/h
+	public function setSpeed($speed){			//Permet de fixer la vitesse entre 0 et la vitesse max en km/h
 		if($vitesse < 0){
 			echo "Tu essaye de mettre une vitesse négative ? Bravo !";
 			return -1;
