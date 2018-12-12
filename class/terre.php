@@ -9,12 +9,11 @@ abstract class Terre extends Vehicule{
 
 /** Attribut */
 
-	public function __construct($wheel,$window,$rearview_mirror,$shock_absorber) {
+	public function __construct($wheel,$window,$rearview_mirror) {
 		parent::__construct()
 		$this->wheel = setWheel($wheel);
 		$this->windows = setWheel($wheel);
 		$this->rearview_mirror = setRearview_mirror($rearview_mirror);
-		$this->shock_absorber = setShock_absorber($shock_absorber);
 	}
 
 
@@ -58,20 +57,6 @@ abstract class Terre extends Vehicule{
 			return $this->$rearview_mirror;
 		}
 	}
-
-	public function getShock_absorber() {
-		echo "Ce véhicule à ".$shock_absorber." ammortisseur.";
-		return $this->shock_absorber;
-	}
-	
-	public function setShock_absorber($shock_absorber) {
-		if ($wheel == $shock_absorber){
-			echo "Tu as un problème !";
-		} else {
-			echo "Ton véhucule terrestre n'est pas hs";
-		}
-	}
-	
 
 	/** Méthode */
 
