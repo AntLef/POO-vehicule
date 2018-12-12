@@ -46,7 +46,7 @@ class SousMarin extends eau {
         return $this->batterie;
     }
     public function setBatterie($bat){
-        this->batterie = $bat;
+        $this->batterie = $bat;
     }
 
 
