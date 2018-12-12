@@ -23,4 +23,4 @@ class Voiture extends Terre{
 	}
 /** Méthode */
 }
-//SizeX,Y,Z,speed,typeEnergie,poids,couleur,vitesseMax, nbRoues, nbVFenetres,nbRetro,nbPassager
+//SizeX,Y,Z,speed,typeEnergie,poids,couleur,vitesseMax, nbRoues, nbFenetres,nbRetro,nbPassager
