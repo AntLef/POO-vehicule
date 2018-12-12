@@ -1,5 +1,7 @@
 <?php
 
+require("./vehicule.php");
+
 abstract class Terre extends Vehicule{
 
 	protected $wheel = 2; /** roue */
@@ -9,8 +11,8 @@ abstract class Terre extends Vehicule{
 
 /** Attribut */
 
-	public function __construct($wheel,$window,$rearview_mirror) {
-		parent::__construct()
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror) {
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed)
 		$this->wheel = setWheel($wheel);
 		$this->windows = setWheel($wheel);
 		$this->rearview_mirror = setRearview_mirror($rearview_mirror);
@@ -25,7 +27,7 @@ abstract class Terre extends Vehicule{
 		if ($wheel < 2){
 			$wheel = 2;
 		} else {
-			return $this->$wheel;
+			return $this->$wheel;,
 		}
 	}
 	

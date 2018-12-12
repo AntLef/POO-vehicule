@@ -1,12 +1,15 @@
 <?php
 
+require("./terre.php");
+require("./vehicule.php");
+
 class Voiture extends Terre{
 	protected $passager = 1;
 
-/** Attribut */
+/* Attribut */
 
-	public function __construct($wheel,$passager) {
-		parent::__construct();
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror,$passager) {
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror);
 		$this->passager = setPassager($passager);
 	}
 	public function getPassager(){
