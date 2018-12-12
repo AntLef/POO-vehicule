@@ -12,7 +12,7 @@ abstract class Vehicule
 	protected $color;			//Couleur du véhicule ("Bleue","Rouge","Jaune","Vert","Gris","Blanc","Noir","Orange","Violet")
 	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest")
 	protected $maxSpeed;		//Vitesse max du véhicule(pour la vérification du setSpeed)
-	protected $orientation;
+	protected $orientation = 1;
 	CONST $possibleOrientation = new array("Nord","Est","Sud","Ouest");
 
 	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed){	//Constructeur de la classe véhicule complet
@@ -156,6 +156,32 @@ abstract class Vehicule
 		$this->orientation += 1;
 		if($this->orientation > 3){
 			$this->orientation = 0;
+		}
+	}
+	public function getOrientation(){
+		return $this->possibleOrientation[$orientation];
+	}
+	public function setOrientation($orientation){
+		switch ($orientation) {
+			case 'Nord':
+				$this->orientation = 0;
+			break;
+
+			case 'Est':
+				$this->orientation = 1;
+			break;
+
+			case 'Sud':
+				$this->orientation = 2;
+			break;
+
+			case 'Ouest':
+				$this->orientation = 3;
+			break;
+
+			default:
+				echo "Erreur, la valeur doit être un point cardinal comme : 'Nord'";
+			break;
 		}
 	}
 }
