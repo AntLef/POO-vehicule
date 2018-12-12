@@ -10,8 +10,10 @@ abstract class Vehicule
 	protected $weight;			//Poids en kg
 	protected $isOn = false;	//Booleen d'activation du véhicule
 	protected $color;			//Couleur du véhicule ("Bleue","Rouge","Jaune","Vert","Gris","Blanc","Noir","Orange","Violet")
-	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest"
-	protected $maxSpeed;		//Vitesse max du véhicule(pour la vérification du setSpeed);
+	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest")
+	protected $maxSpeed;		//Vitesse max du véhicule(pour la vérification du setSpeed)
+	protected $orientation;
+	CONST $possibleOrientation = new array("Nord","Est","Sud","Ouest");
 
 	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed){	//Constructeur de la classe véhicule complet
 		$this->sizeX = setSizeX($sizeX);
@@ -141,7 +143,19 @@ abstract class Vehicule
 		}
 		$this->speed -= $deccel;
 	}
-	public function getMaxSpeed(){
+	public function getMaxSpeed(){					//récupère la valeur de la vitesse maximum du véhicule
 		return $this->maxSpeed;
+	}
+	public function turnLeft(){						//permet de tourner a gauche de 90° (on considère que le véhicule peut aller dans 4 directions differentes, vers les 4 points cardinaux)
+		$this->orientation -= 1;
+		if($this->orientation < 0){
+			$this->orientation = 3;
+		}
+	}
+	public function turnRight(){					//permet de tourner a droite de 90° (on considère que le véhicule peut aller dans 4 directions differentes, vers les 4 points cardinaux)
+		$this->orientation += 1;
+		if($this->orientation > 3){
+			$this->orientation = 0;
+		}
 	}
 }
