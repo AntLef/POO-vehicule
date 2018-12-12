@@ -10,7 +10,6 @@ require(vehicule.php);
 	protected $radar;
 	protected $radio;
 
-	//Ici on crée un constructeur
 	public function __construct($altitude,$roues){ //Ici on crée un constructeur
 		$this->altitude = $altitude;
 		$this->roues = $roues;
