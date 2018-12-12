@@ -10,6 +10,7 @@ abstract class Vehicule
 	protected $weight;			//Poids en kg
 	protected $isOn = false;	//Booleen d'activation du véhicule
 	protected $color;			//Couleur du véhicule ("Bleue","Rouge","Jaune","Vert","Gris","Blanc","Noir","Orange","Violet")
+	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest")
 
 	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color){	//Constructeur de la classe véhicule complet
 		$this->sizeX = $sizeX;
