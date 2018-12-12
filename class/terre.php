@@ -7,27 +7,24 @@ abstract class Terre extends Vehicule{
 	protected $rearview_mirror; /** rétroviseur */
 	protected $shock_absorber; /** amortisseur  */
 
-	protected $drift;
-
-
 /** Attribut */
 
-	public function __construct($wheel,$window,$rearview_mirror,$shock_absorber,$bodywork,$drift) {
-		$this->wheel = $wheel;
-		$this->windows = $window;
-		$this->rearview_mirror = $rearview_mirror;
-		$this->shock_absorber = $shock_absorber;
-		$this->bodywork = $bodywork;
+	public function __construct($wheel,$window,$rearview_mirror,$shock_absorber) {
+		parent::__construct()
+		$this->wheel = setWheel($wheel);
+		$this->windows = setWheel($wheel);
+		$this->rearview_mirror = setRearview_mirror($rearview_mirror);
+		$this->shock_absorber = setShock_absorber($shock_absorber);
 	}
 
 
-	public function getwheel() {
+	public function getWheel() {
 		echo "Ce véhicule terrestre à ".$wheel." roues.";
 	}
 
-	public function Setwheel($wheel) { /** si ton véhicule à moins de deux roues */
+	public function setWheel($wheel) { /* si ton véhicule à moins de deux roues */
 		if ($wheel < 2){
-			$wheel + 1;
+			$wheel = 2;
 		} else {
 			return $this->$wheel;
 		}

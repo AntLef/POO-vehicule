@@ -1,44 +1,27 @@
 <?php
 
 class Voiture extends Terre{
-
-	protected $wheel = 4;
 	protected $passager = 1;
 
 /** Attribut */
 
-	public function __construct($wheel) {
-		$this->wheel = $wheel;
+	public function __construct($wheel,$passager) {
+		parent::__construct();
+		$this->passager = setPassager($passager);
 	}
-
-
-	public function getwheel() {
-		echo "Ce véhicule terrestre à ".$wheel." roues.";
-	}
-
-	public function Setwheel($wheel) { /** si ton véhicule à moins de deux roues */
-		if ($wheel < 4){
-			$wheel + 1;
-		} else {
-			return $this->$wheel;
-		}
-	}
-
-	public function getpassager(){
+	public function getPassager(){
 		return $this->passager;
 	}
 	public function setPassager($passager){
-		if($passager > 4){
+		if($passager > 5){
 			echo "Il n'y a plus de place dans le vehicule";
+			return -1;
 		} else {
 			echo "Il y a de place dans le vehicule";
+			$this->passager = $passager;
 		} 
 	}
-	
-
 /** Méthode */
-
-
 }
 
 ?>

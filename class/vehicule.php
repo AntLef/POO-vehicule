@@ -12,7 +12,7 @@ abstract class Vehicule
 	protected $color;			//Couleur du véhicule ("Bleue","Rouge","Jaune","Vert","Gris","Blanc","Noir","Orange","Violet")
 	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest")
 	protected $maxSpeed;		//Vitesse max du véhicule(pour la vérification du setSpeed)
-	protected $orientation = 1;
+	protected $orientation = 1;	//Sert d'index au tableau constant possibleOrientation
 	CONST $possibleOrientation = new array("Nord","Est","Sud","Ouest");
 
 	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed){	//Constructeur de la classe véhicule complet
@@ -51,27 +51,30 @@ abstract class Vehicule
 		return $this->isOn;
 	}
 	public function setSizeX($size){				//Permet de fixer la longueur du véhicule (30m max, taille de la plus grande limousine du monde)
-		if($size > 3000){
+		/*if($size > 3000){
 			echo "La limousine la plus grande du monde est plus petite que ça, arrete tes bétises !";
+		}else*/if($sizeX <=0){
+			echo "Une taille négative, c'est compliqué à fabriquer";
+			return -1;
 		}else{
 			$this->sizeX = $size;
 		}
 	}
 	public function setSizeY($size){				//Permet de fixer la hauteur du véhicule (entre 50cm et 2m50 max)
-		if($size > 250){
+		/*if($size > 250){
 			echo "On aime pas trop les monster Trucks ici";
 			return -1;
-		}else if($size <= 50){
-			echo "Un véhicule de moins de 50cm ? ça parait compliqué..."
+		}else */if($size <= 0){
+			echo "Un véhicule de moins de 0cm ? ça parait compliqué..."
 			return -1;
 		}else{
 			$this->sizeY = $size;
 		}
 	}
 	public function setSizeZ($size){				//Permet de fixer la largeur du véhicule (2m50 max)
-		if($size > 250){
+		/*if($size > 250){
 			echo "On aime pas trop les monster Trucks ici";
-		}else if($size <= 0){
+		}else */if($size <= 0){
 			echo "Une taille négative, j'arrive pas a voir le concept";
 			return -1;
 		}else{
@@ -158,10 +161,10 @@ abstract class Vehicule
 			$this->orientation = 0;
 		}
 	}
-	public function getOrientation(){
+	public function getOrientation(){				//Retourne la chaine de caractère correspondante à la direction du véhicule
 		return $this->possibleOrientation[$orientation];
 	}
-	public function setOrientation($orientation){
+	public function setOrientation($orientation){	//Prend une chaine de caractère en entrée, et inscrit l'index correspondant dans l'attribut de l'objet pour trouver dans le tableau constant
 		switch ($orientation) {
 			case 'Nord':
 				$this->orientation = 0;
