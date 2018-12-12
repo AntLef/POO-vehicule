@@ -10,17 +10,18 @@ abstract class Vehicule
 	protected $weight;			//Poids en kg
 	protected $isOn = false;	//Booleen d'activation du véhicule
 	protected $color;			//Couleur du véhicule ("Bleue","Rouge","Jaune","Vert","Gris","Blanc","Noir","Orange","Violet")
-	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest")
+	protected $orientation;		//Orientation du véhicule ("Nord","Est","Sud","Ouest"
+	protected $maxSpeed;		//Vitesse max du véhicule(pour la vérification du setSpeed);
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color){	//Constructeur de la classe véhicule complet
-		$this->sizeX = $sizeX;
-		$this->sizeY = $sizeY;
-		$this->sizeZ = $sizeZ;
-		$this->speed = $speed;
-		$this->energyType = $energyType;
-		$this->weight = $weight;
-		$this->color = $color;
-
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed){	//Constructeur de la classe véhicule complet
+		$this->sizeX = setSizeX($sizeX);
+		$this->sizeY = setSizeY($sizeY);
+		$this->sizeZ = setSize($sizeZ);
+		$this->speed = setSpeed($speed);
+		$this->energyType = setEnergy($energyType);
+		$this->weight = setWeight($weight);
+		$this->color = setColor($color);
+		$this->maxSpeed = $maxSpeed;
 	}
 
 	public function getSize(){						//Ce getter récupère les 3 attributs de taille sous forme de tableau, le echo sert de test
@@ -47,14 +48,14 @@ abstract class Vehicule
 	public function getOn(){						//Getter de l'état du véhicule (allumé ou non)
 		return $this->isOn;
 	}
-	public function setSizeX(int $size){			//Permet de fixer la longueur du véhicule (30m max, taille de la plus grande limousine du monde)
+	public function setSizeX($size){				//Permet de fixer la longueur du véhicule (30m max, taille de la plus grande limousine du monde)
 		if($size > 3000){
 			echo "La limousine la plus grande du monde est plus petite que ça, arrete tes bétises !";
 		}else{
 			$this->sizeX = $size;
 		}
 	}
-	public function setSizeY(int $size){			//Permet de fixer la hauteur du véhicule (entre 50cm et 2m50 max)
+	public function setSizeY($size){				//Permet de fixer la hauteur du véhicule (entre 50cm et 2m50 max)
 		if($size > 250){
 			echo "On aime pas trop les monster Trucks ici";
 			return -1;
@@ -65,7 +66,7 @@ abstract class Vehicule
 			$this->sizeY = $size;
 		}
 	}
-	public function setSizeZ(int $size){			//Permet de fixer la largeur du véhicule (2m50 max)
+	public function setSizeZ($size){				//Permet de fixer la largeur du véhicule (2m50 max)
 		if($size > 250){
 			echo "On aime pas trop les monster Trucks ici";
 		}else if($size <= 0){
@@ -75,12 +76,12 @@ abstract class Vehicule
 			$this->sizeZ = $size;
 		}
 	}
-	public function setSpeed(int $speed){			//Permet de fixer la vitesse entre 0 et 200 km/h
+	public function setSpeed(int $speed){			//Permet de fixer la vitesse entre 0 et la vitesse max en km/h
 		if($vitesse < 0){
 			echo "Tu essaye de mettre une vitesse négative ? Bravo !";
 			return -1;
-		}elseif ($vitesse > 200) {
-			echo "On est pas sur l'autobanh allemande, pauvre fou !";
+		}elseif ($vitesse > $this->maxSpeed) {
+			echo "La vitesse entrée dépasse la vitesse autorisée";
 			return -1;
 		}else $this->speed = $speed;
 	}
@@ -140,5 +141,7 @@ abstract class Vehicule
 		}
 		$this->speed -= $deccel;
 	}
-
+	public function getMaxSpeed(){
+		return $this->maxSpeed;
+	}
 }
