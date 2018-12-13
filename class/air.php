@@ -1,7 +1,7 @@
 <?php  
-require(vehicule.php);
+require_once("vehicule.php");
 
-	class Air extends Vehicule
+	abstract class Air extends Vehicule
 {
 
 	protected $helice;
@@ -11,16 +11,17 @@ require(vehicule.php);
 	protected $radio;
 
 	//Ici on crée un constructeur
-	public function __construct($altitude,$roues){ //Ici on crée un constructeur
-		$this->altitude = $altitude;
-		$this->roues = $roues;
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$helice,$altitude,$roues,$radar,$radio){ 
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed);
+		$this->setHelice($helice);
+		$this->setAltitude($altitude);
+		$this->setRoues($roues);
+		$this->setRadar($radar);
+		$this->setRadio($radio);
 	}
 
 	// On crée la méthode abstraite vol qui va être redéfini dans avion et hélico
-	abstract function vol()
-
-	//idem
-	abstract function tourner()
+	abstract function vol();
 
 	//On va juste activer ou désactiver les roues qui sont inutiles en l'air, elles se réactivent quand on est a 100 m du sol, de manière à pouvoir atterir.
 	public function rouesOffOn(){
@@ -46,7 +47,8 @@ require(vehicule.php);
 			$helice = false;
 		}
 	}
-	//On vérifie que le véhicule est allumé, qu'il est bien au sol et que les roues soit sortis pour pouvoir démarrer. Les hélices s'activent pour augmenter la vitesse
+	//On vérifie que le véhicule est allumé, qu'il est bien au sol et que les roues 
+	//soit sortis pour pouvoir démarrer. Les hélices s'activent pour augmenter la vitesse
 	public function rouler(){
 		if ($isOn == true && $altitude == 0 && $roues = true) {
 			echo "<br>Votre véhicule roule pour prendre de la vitesse.";
@@ -76,6 +78,22 @@ require(vehicule.php);
 	public function getAltitude(){
 		return $this->altitude;
 	}
+	public function setHelice($helice){
+		$this->helice = $helice;
+	}
+	public function setAltitude($altitude){
+		$this->altitude = $altitude;
+	}
+	public function setRoues($roues){
+		$this->roues = $roues;
+	}
+	public function setRadar($radar){
+		$this->radar = $radar;
+	}
+	public function setRadio($radio){
+		$this->radio = $radio;
+	}
+
 }
 
 ?>

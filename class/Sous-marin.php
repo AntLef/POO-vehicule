@@ -10,6 +10,15 @@ class SousMarin extends eau {
     protected $batterie;
 
 
+    public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$sonar,$radio,$immersible,$nbTorpille,$propulseur,$radar,$batterie){
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$sonar,$radio);
+		$this->setImmersible($immersible);
+        $this->setTorpille($nbTorpille);
+        $this->setPropulseur($propulseur);
+        $this->setRadar($radar);
+        $this->setBatterie($batterie);
+    }
+    
     public function getImmersible(){
         return $this->immersible;
     }
@@ -72,7 +81,7 @@ class SousMarin extends eau {
 
 
     public function remonter(){
-        if ($immersible <= 200 $immersible -=90){
+        if ($immersible <= 200 && $immersible -=90){
             echo "vous remonté vers la surface";
         }
         else {

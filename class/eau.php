@@ -1,6 +1,6 @@
 <?php
 
-require(vehicule.php);
+require_once("vehicule.php");
 
 abstract class eau extends Vehicule{
 
@@ -8,6 +8,11 @@ abstract class eau extends Vehicule{
 	protected $sonar;
 	protected $radio;
 
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$sonar,$radio){
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed);
+		$this->setSonar($sonar);
+		$this->setRadio($radio);
+	}
 
 	public function getSonar(){
  	   return $this->sonar;
