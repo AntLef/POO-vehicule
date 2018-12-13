@@ -11,8 +11,8 @@ require_once("vehicule.php");
 	protected $radio;
 
 	//Ici on crée un constructeur
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$helice,$altitude,$roues,$radar,$radio){ 
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed);
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio){ 
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life);
 		$this->setHelice($helice);
 		$this->setAltitude($altitude);
 		$this->setRoues($roues);

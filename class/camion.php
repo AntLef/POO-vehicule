@@ -6,8 +6,8 @@ class Camion extends Terre{
 
 /** Attribut */
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror,$passager) {
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$wheel,$window,$rearview_mirror);
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$wheel,$window,$rearview_mirror,$passager) {
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$wheel,$window,$rearview_mirror);
 		$this->setPassager($passager);
 	}
 

@@ -5,13 +5,12 @@ require_once("air.php");
 {
 
 	protected $vitesseHelice;
-	protected $mitraillette;
 	protected $munition;
 	protected $stockMunition = 200;
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$helice,$altitude,$roues,$radar,$radio,$mitraillette){ 
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$helice,$altitude,$roues,$radar,$radio);
-		$this->setMitraillette($mitraillette);
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio,$munition){ 
+		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio);
+		$this->setMunition($munition);
 	}
 
 	//méthode pour voler et prendre de l'altitude
@@ -22,10 +21,19 @@ require_once("air.php");
 		}
 	}
 	//méthode pour tirer et recharger
-	public function Tirer(){
+	public function Tirer(Helico $cible){
 		if ($this->munition > 0){
 			$this->munition --;
+			$cible->life -=10;
+			if($cible<=0){
+				echo "<br>Cible détruite.";
+				$cible->life = 0;
+			}else{
+				echo "<br>La cible à été endommagée.";
+			}
 
+		}else{
+			echo "<br>Plus de munitions !";
 		}
 	}
 	public function Recharger(){
@@ -41,9 +49,6 @@ require_once("air.php");
 	public function getVitesseHelice(){
 		return $this->vitesseHelice;
 	}
-	public function getMitraillette(){
-		return $this->mitraillette;
-	}
 	public function getMunition(){
 		return $this->munition;
 	}
@@ -52,9 +57,6 @@ require_once("air.php");
 	}
 	public function setVitesseHelice($vitesseHelice){
 		$this->vitesseHelice = $vitesseHelice;
-	}
-	public function setMitraillette($mitraillette){
-		$this->mitraillete = $mitraillette;
 	}
 	public function setMunition($munition){
 		$this->munition = $munition;

@@ -13,8 +13,9 @@ abstract class Vehicule
 	protected $maxSpeed;		//Vitesse max du véhicule(pour la vérification du setSpeed)
 	protected $orientation = 0;	//Sert d'index au tableau constant possibleOrientation
 	protected $possibleOrientation = array("Nord","Est","Sud","Ouest");
+	protected $life = 100;
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed){	//Constructeur de la classe véhicule complet
+	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life){	//Constructeur de la classe véhicule complet
 		$this->setSizeX($sizeX);
 		$this->setSizeY($sizeY);
 		$this->setSizeZ($sizeZ);
@@ -23,6 +24,7 @@ abstract class Vehicule
 		$this->setWeight($weight);
 		$this->setColor($color);
 		$this->maxSpeed = $maxSpeed;
+		$this->setLife($life);
 	}
 
 	public function getSize(){						//Ce getter récupère les 3 attributs de taille sous forme de tableau, le echo sert de test
@@ -185,5 +187,18 @@ abstract class Vehicule
 				echo "<br>Erreur, la valeur doit être un point cardinal comme : 'Nord'.";
 			break;
 		}
+	}
+	public function setLife($life){					
+		if($life > 100 || $life < 0){
+			echo "<br>Le pourcentage d'état du véhicule doit être compris entre 0% et 100%";
+			return;
+		}else{
+			echo "<br>Le véhicule à un état de ".$life."%.";
+			$this->life = $life;
+		}
+	}
+	public function getLife(){
+		echo "<br>Le véhicule à un état de santé de ".$this->life."%.";
+		return $this->life;
 	}
 }
