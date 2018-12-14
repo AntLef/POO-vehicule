@@ -2,14 +2,14 @@
 
 require_once("vehicule.php");
 
-abstract class eau extends Vehicule{
+abstract class Eau extends Vehicule{
 
 
 	protected $sonar;
 	protected $radio;
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio){
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life);
+	public function __construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio){
+		parent::__construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life);
 		$this->setSonar($sonar);
 		$this->setRadio($radio);
 	}

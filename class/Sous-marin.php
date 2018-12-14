@@ -1,7 +1,7 @@
 <?php
 
 
-class SousMarin extends eau {
+class SousMarin extends Eau {
 
     protected $immersible;
     protected $nbTorpille;
@@ -10,8 +10,8 @@ class SousMarin extends eau {
     protected $batterie;
 
 
-    public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio,$immersible,$nbTorpille,$propulseur,$radar,$batterie){
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio);
+    public function __construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio,$immersible,$nbTorpille,$propulseur,$radar,$batterie){
+		parent::__construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio);
 		$this->setImmersible($immersible);
         $this->setTorpille($nbTorpille);
         $this->setPropulseur($propulseur);

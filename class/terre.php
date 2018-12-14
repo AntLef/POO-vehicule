@@ -11,8 +11,8 @@ abstract class Terre extends Vehicule{
 
 /** Attribut */
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$wheel,$window,$rearview_mirror) {
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life);
+	public function __construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$wheel,$window,$rearview_mirror) {
+		parent::__construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life);
 		$this->wheel = $this->setWheel($wheel);
 		$this->windows = $this->setWheel($wheel);
 		$this->rearview_mirror = $this->setRearview_mirror($rearview_mirror);

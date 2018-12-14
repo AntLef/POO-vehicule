@@ -9,104 +9,109 @@
 <?php
 
     require_once('class/voiture.php');
+    require_once('class/moto.php');
+    require_once('class/camion.php');
+    require_once('class/AvionReaction.php');
+    require_once('class/Avionhelice.php');
+    require_once('class/helico.php');
+    require_once('class/bateau a voile.php');
+    require_once('class/bateau a moteur.php');
+    require_once('class/Sous-marin.php');
+
     echo "<br>Votre voiture";
 
-    $voiture =new Voiture(1,1,1,55,"thermique",1000,"Bleue",57,100,4,4,3,2);
-    $voiture->getSpeed();
+    $voiture =new Voiture("Voiture1",1,1,1,55,"Diesel",1000,"Bleue",57,100,4,4,3,2);
+    $voiture->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$voiture->getSpeed();
     $voiture->Accelerate(57,1);
-    $voiture->getSpeed(); 
+    echo "<br>Ce véhicule à une vitesse de ".$voiture->getSpeed(); 
     echo "<br>";
 
-    require_once('class/moto.php');
+    
     echo "<br>Votre moto";
 
-    $moto =new Moto(1,1,1,55,"thermique",250,"Noir",57,100,2,1,2,1);
-
-    $moto->getSpeed();
+    $moto =new Moto("Moto1",1,1,1,55,"Essence",250,"Noir",57,100,2,1,2,1);
+    $moto->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$moto->getSpeed();
     $moto->Accelerate(57,1);
-    $moto->getSpeed(); 
+    echo "<br>Ce véhicule à une vitesse de ".$moto->getSpeed(); 
     echo "<br>";
 
-    require_once('class/camion.php');
     echo "<br>Votre voiture";
 
-    $camion =new Camion(1,1,1,55,"thermique",2000,"Blanc",57,100,2,1,2,1);
-
-    $camion->getSpeed();
+    $camion =new Camion("Camion1",1,1,1,55,"Essence",2000,"Blanc",57,100,2,1,2,1);
+    $camion->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$camion->getSpeed();
     $camion->Accelerate(57,1);
-    $camion->getSpeed(); 
+    echo "<br>Ce véhicule à une vitesse de ".$camion->getSpeed(); 
     echo "<br>";
 //PARTIE AIR !!!!!!!!!!!
-    require_once('class/AvionRéaction.php');
     echo "<br>Votre Avion à réaction";
 
-    $avionReaction =new AvionReaction(1,1,1,100,"thermique",3000,"Rouge",300,100,3,0,3,500,500,10);
-
-    $avionReaction->getSpeed();
+    $avionReaction =new AvionReaction("AvionR1",1,1,1,100,"Kérosène",3000,"Rouge",300,100,3,0,3,500,500,10);
+    $avionReaction->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$avionReaction->getSpeed();
     $avionReaction->Accelerate(300,1);
-    $avionReaction->getSpeed(); 
+    echo "<br>Ce véhicule à une vitesse de ".$avionReaction->getSpeed(); 
     echo "<br>";
 
-    require_once('class/Avionhélice.php');
     echo "<br>Votre Avion à hélice";
 
-    $avionHelice =new AvionHelice(1,1,1,80,"thermique",3000,"Rouge",250,100,3,0,3,500,500);
-
-    $avionHelice->getSpeed();
+    $avionHelice =new AvionHelice("AvionH1",1,1,1,80,"Solaire",3000,"Rouge",250,100,3,0,3,500,500);
+    $avionHelice->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$avionHelice->getSpeed();
     $avionHelice->Accelerate(250,1);
-    $avionHelice->getSpeed(); 
+    echo "<br>Ce véhicule à une vitesse de ".$avionHelice->getSpeed(); 
     echo "<br>";
 
-    require_once('class/helico.php');
     echo "<br>Votre helico";
 
-    $helico =new Helico(1,1,1,70,"thermique",3000,"Rouge",220,100,3,0,3,500,500,250);
-    $helico->getSpeed();
+    $helico =new Helico("Hélico1",1,1,1,70,"Kérosène",3000,"Rouge",220,100,3,0,3,500,500,250);
+    $helico->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$helico->getSpeed();
     $helico->Accelerate(250,1);
-    $helico->getSpeed(); 
+    echo "<br>Ce véhicule à une vitesse de ".$helico->getSpeed(); 
     echo "<br>";
-    echo "<br>Votre helico";
-    $helico2 = new Helico(1,1,1,80,"solaire",2400,"Gris",200,90,2,100,3,700,540,150);
 
-    echo "<br>";
-    $helico2->getLife();
-    $helico->Tirer($helico2);
-    $helico2->getLife();
     //partie Eau 
-    require_once('class/bateau a voile.php');
     echo "<br>Votre bateau a voile";
 
-    $bateauavoile =new bateauavoile(2,2,2,80,"vent",5000,"Blanc",300,100,500,500,10,2,2);
-
-    $bateauavoile->getSpeed();
-    $bateauavoile->Accelerate(90,50);
-    $bateauavoile->getSpeed(); 
+    $bateauVoile =new BateauVoile("BateauV1",2,2,2,80,"Vent",5000,"Blanc",300,100,500,500,10,2,2);
+    $bateauVoile->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$bateauVoile->getSpeed();
+    $bateauVoile->Accelerate(90,50);
+    echo "<br>Ce véhicule à une vitesse de ".$bateauVoile->getSpeed(); 
     echo "<br>";
 
-    require_once('class/bateau a moteur.php');
     echo "<br>Votre bateau a moteur";
 
-    $bateauamoteur =new bateauamoteur(2,2,2,100,"vent",5000,"Bleue",300,100,500,500,10);
-
-    $bateauamoteur->getSpeed();
-    $bateauamoteur->Accelerate(250,150);
-    $bateauamoteur->getSpeed(); 
+    $bateauMoteur =new BateauMoteur("BateauM1",2,2,2,100,"Électrique",5000,"Bleue",300,100,500,500,10);
+    $bateauMoteur->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$bateauMoteur->getSpeed();
+    $bateauMoteur->Accelerate(250,150);
+    echo "<br>Ce véhicule à une vitesse de ".$bateauMoteur->getSpeed(); 
     echo "<br>";
 
-    require_once('class/Sous-marin.php');
     echo "<br>Votre Sous-Marin";
 
-    $SousMarin =new SousMarin(3,3,3,90,"thermique",10000,"Noir",350,100,1000,1000,200,20,5,1000,2);
-
-    $SousMarin->getSpeed();
-    $SousMarin->Accelerate(350,300);
-    $SousMarin->getSpeed(); 
+    $sousMarin =new SousMarin("SousMarin1",3,3,3,90,"Kérosène",10000,"Noir",350,100,1000,1000,200,20,5,1000,2);
+    $sousMarin->Start();
+    echo "<br>Ce véhicule à une vitesse de ".$sousMarin->getSpeed();
+    $sousMarin->Accelerate(350,300);
+    echo "<br>Ce véhicule à une vitesse de ".$sousMarin->getSpeed(); 
     echo "<br>";
     
     
 /* objectif = appeler voiture, augmenter vitesse voiture quand bouton on, afficher les infos de la voiture, 
     Òafficher vitesse voiture quand vitesse = 57 */
-
+    echo "<br>Deuxième hélicoptère";
+    $helico2 = new Helico("Hélico2",1,1,1,80,"Solaire",2400,"Gris",200,90,2,100,3,700,540,150);
+    $helico2->Start();
+    echo "<br>";
+    echo "<br>L'Hélicoptère ".$helico2->getName()." à un % de santé de ".$helico2->getLife()."%.";
+    $helico->Tirer($helico2);
+    echo"<br>L'hélicoptère ".$helico->getName()." a tirer sur ".$helico2->getName().".";
+    echo "<br>L'Hélicoptère ".$helico2->getName()." à désormais un % de santé de ".$helico2->getLife()."%."
 ?>
 </body>
 </html>
