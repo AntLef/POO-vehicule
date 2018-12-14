@@ -8,8 +8,8 @@ require_once("air.php");
 	protected $munition;
 	protected $stockMunition = 200;
 
-	public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio,$munition){ 
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio);
+	public function __construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio,$munition){ 
+		parent::__construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$helice,$altitude,$roues,$radar,$radio);
 		$this->setMunition($munition);
 	}
 
@@ -25,13 +25,10 @@ require_once("air.php");
 		if ($this->munition > 0){
 			$this->munition --;
 			$cible->life -=10;
-			if($cible<=0){
+			if($cible->life<=0){
 				echo "<br>Cible détruite.";
 				$cible->life = 0;
-			}else{
-				echo "<br>La cible à été endommagée.";
 			}
-
 		}else{
 			echo "<br>Plus de munitions !";
 		}

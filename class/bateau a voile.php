@@ -2,13 +2,13 @@
 
 require_once("bateau.php");
 
-class bateauavoile extends bateau{
+class BateauVoile extends Bateau{
 
     protected $nbvoile;
     protected $nbmat;
 
-    public function __construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio,$nbgiletdesauvetage,$nbmat,$nbvoile){
-		parent::__construct($sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio,$nbgiletdesauvetage);
+    public function __construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio,$nbgiletdesauvetage,$nbmat,$nbvoile){
+		parent::__construct($name,$sizeX,$sizeY,$sizeZ,$speed,$energyType,$weight,$color,$maxSpeed,$life,$sonar,$radio,$nbgiletdesauvetage);
 		$this->setNbMat($nbmat);
 		$this->setNbVoile($nbvoile);
 	}
